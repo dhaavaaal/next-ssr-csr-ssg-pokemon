@@ -1,0 +1,12 @@
+Client Side Rendering
+In this(client side rendering) model, the server renders a blank page alongwith a reference to a javascript bundle that goes up to the client, The client then renders a blank page and then starts interpreting that bundle of Javascript which is probably your React App. It finally executes that, that react creates some DOM elements they get put on the page and boom there's your UI.
+So this is how CSR works.
+
+Pro's
+1)It's very fast for the server to render a blank page 
+2)One can statically build these sites, one can statically build the HTML,CSS,JS and then deploy that out to S3 and then you're serving out to the S3 and not serving off of a server.
+3)It supports SPA's
+
+Con's
+1)It is that you are rendering(vending) a blank page to the customer so until that react app loads it's gonna show a blank page or a loader which is not great.
+2)Bundle sizes can be large nowadays.So, particularly on slow connections that's gonna be a problem.
