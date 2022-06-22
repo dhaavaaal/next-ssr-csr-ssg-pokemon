@@ -1,13 +1,13 @@
-import { useRouter } from "next/router";
+// import { useRouter } from "next/router";
 import axios from "axios";
-import { useQuery } from "react-query";
-import { useState } from "react";
+// import { useQuery } from "react-query";
 import Head from "next/head";
 import { Col, Container, Row } from "react-bootstrap";
-import Image from "next/image";
 
 const getPokemon = async (key, name) => {
-  const { data } = await axios.get(`/api/pokemon?name=${name}`);
+  const { data } = await axios.get(
+    `http://localhost:3000/api/pokemon?name=${name}`
+  );
   // const { data } = await axios.get(`/api/search`);
   //   console.log(data);
   return data;
@@ -17,13 +17,13 @@ const getPokemon = async (key, name) => {
   //   };
 };
 
-const pokemon = () => {
-  const router = useRouter();
-  const { data } = useQuery(
-    ["name", router.query.name],
-    getPokemon.bind(null, "1", router.query.name)
-  );
-  console.log("Data", data);
+const pokemon = ({ data }) => {
+  // const router = useRouter();
+  // const { data } = useQuery(
+  //   ["name", router.query.name],
+  //   getPokemon.bind(null, "1", router.query.name)
+  // );
+  // console.log("Data", data);
   return (
     <div>
       <Head>
@@ -64,3 +64,13 @@ const pokemon = () => {
 //   return <div>{router.query.name}</div>;
 // };
 export default pokemon;
+
+export async function getServerSideProps(context) {
+  const data = await getPokemon(null, context.params.name);
+  console.log(data);
+  return {
+    props: {
+      data: data,
+    }, //will be passed to the page component as props
+  };
+}
