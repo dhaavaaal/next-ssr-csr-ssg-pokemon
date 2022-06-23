@@ -1,0 +1,10 @@
+Which One To Choose When?
+
+So for CSR it would be good for log in experiences as you're never gonna render a bank account kindof page without authorisation or without understanding who the customer is.
+It's also great for SPA's
+It's really the only way to do SPA's
+It's great for proof oof concepts and where performance is not necessarily all that critical 
+
+One could choose SSR if had requirements like SEO support or pages on loading fast on slow connections 
+
+And one should prefer SSG if I has those heavy requirements and also a fairly slow moving page set like for example the product list from a e-commerce site.

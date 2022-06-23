@@ -6,3 +6,23 @@ that are needed to be rendered at build time and then it will build each one of 
 hosting site.  
 
 Here we work with getStaticProps and getStaticPaths
+getStaticProps is just like getServerSideProps but just for static side of the house 
+
+Pro's
+1)Immediate
+The content is immediately available just like SSR i.e its really fast.It's really fast on slow connections as well
+2)No Client Fetches
+No additional data fetches from the client. It's not like SPA's or CSR's
+3)Ideal for SEO
+It's great for SEO's because again you've got all the HTML there
+4)Fast to serve
+Iy's increadibly fast to serve.Static Site hosting sites are much faster than ever calling a server
+5)No server
+And you don't have a server i.e no need to monitor anything 
+
+Con's
+1)Slow to rebuild
+It can be slow to rebuild on large sites. If you've got a large manifesto files then it may be a problem
+2)UI Incompatibility
+Just like SSR you're gonna have some incompatibilities with UI but can be fixed  
+ 
