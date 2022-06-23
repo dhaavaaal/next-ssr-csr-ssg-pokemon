@@ -4,3 +4,5 @@ off of the server and into the build process.
 So,what happens is that nextJS will request a list of all the pages 
 that are needed to be rendered at build time and then it will build each one of these pages individually and store those off into files you then take those files and deploy them to s3 or any static asset
 hosting site.  
+
+Here we work with getStaticProps and getStaticPaths
