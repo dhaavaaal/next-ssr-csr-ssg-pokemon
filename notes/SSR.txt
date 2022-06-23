@@ -1,0 +1,26 @@
+Server Side Rendering
+It starts the same way we get a request from the client.The react is then run on the server and that creates two artifacts.
+The first is some frosted state, it goes into the script tag in the head and then there is the HTML that's generated from the DOM that's been rendered on the server and that goes into the body that goes off to the client then and the web client because it has got some HTML, it starts rendering starts putting something on the page.
+In addition that JS bundle for the react is run. There is a rehydration phase that takes that data that was put in the head and then sets up your state. Your react app gets run that generates a virtual DOM, those two are reconcile and you are good to go  
+
+Pro's
+1)Immediate
+The content is immediately available i.e. you got those tags, the 
+browser is going to start rendering immediately which is going to look 
+great on slow connections 
+2)No Client Fetches
+No additional fetches(client-side fetching) from the client. We are 
+not going to make any additional API calls back from the client to the 
+server.So the way a client side rendered app or a SPA might work 
+3)Ideal for SEO 
+Good for SEO. The search engine does not need JS in order to understand
+what might be on the page
+
+Con's
+1)Slow on Server
+It is slower for the server to do this.As you're basically rendering your 
+app twice, once in the server and once in the client and it can take a 
+significant amount of time depending on how complex your pages in addition
+some UI frameworks can be incompatible with SSR because they look at 
+window which is not available in the node context so that can be a problem 
+
